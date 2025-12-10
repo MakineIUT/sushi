@@ -1,28 +1,11 @@
 
 
 function Acceuil() {    
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const data = new FormData(e.target);
-    const values = Object.fromEntries(data.entries());
-    alert(
-      `Réservation reçue:\nNom: ${values.name}\nTéléphone: ${values.phone}\nDate: ${values.date} ${values.time}\nPersonnes: ${values.people}`
-    );
-    e.target.reset();
-  };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-amber-50 text-gray-800">
-      <header className="bg-white shadow">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-rose-600">SushiFast</h1>
-          <nav className="space-x-6">
-            <a className="text-sm font-medium hover:text-rose-600" href="#acceuil">Accueil</a>
-            <a className="text-sm font-medium hover:text-rose-600" href="#menu">Menu</a>
-            <a className="text-sm font-medium hover:text-rose-600" href="#reservation">Réserver</a>
-          </nav>
-        </div>
-      </header>
+      
 
       <main className="max-w-5xl mx-auto px-6 py-10">
         <section id="acceuil" className="grid md:grid-cols-2 gap-8 items-center">
@@ -53,7 +36,7 @@ function Acceuil() {
 
           <aside id="reservation" className="bg-white rounded-lg shadow p-6">
             <h3 className="text-xl font-semibold mb-4">Réserver une table</h3>
-            <form onSubmit={handleSubmit} className="space-y-3">
+            <form className="space-y-3">
               <div className="grid grid-cols-2 gap-3">
                 <input
                   name="name"
