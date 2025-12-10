@@ -51,6 +51,7 @@ const F_Decroissant = () => {
         {Boxes.map((box) => (
           <div key={box.id} className="border border-gray-200 rounded-lg p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-500">
             <h2 className="text-2xl font-bold text-red-600 mb-3">{box.nom}</h2>
+            <img className="" src={box.image} alt={box.nom} />
             <p className="text-gray-600 mb-2"><strong>Prix:</strong> {box.prix}€</p>
             <p className="text-gray-600 mb-2"><strong>Pièces:</strong> {box.pieces}</p>
             <p className="text-gray-600 mb-4"><strong>Saveurs:</strong> {box.saveurs.join(", ")}</p>
