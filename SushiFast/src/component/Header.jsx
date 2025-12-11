@@ -33,7 +33,7 @@ function Header() {
               onClick={togglePanier}
               className="relative bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition"
             >
-              🛒 Panier
+               Panier
               {nombreArticles > 0 && (
                 <span className="absolute -top-2 -right-2 bg-yellow-400 text-red-900 text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">
                   {nombreArticles}
