@@ -1,26 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import DATAboxes from "../DATA/boxes.json";
 import Filtre from "../component/Filtre";
-
+import { usePanier } from "../context/PanierContext";
 
 function Menus() {  
-  const [Boxes, setBoxes] = useState([]);
-
-useEffect(() => {
-  setBoxes(DATAboxes);
-}, []);
-
-
+  const [Boxes, setBoxes] = useState(DATAboxes);
+  const { ajouterAuPanier } = usePanier();
 
   return (
-    <div className="max-w-7xl mx-auto p-8">
+    <div className="max-w-7xl mx-auto p-8 mt-20">
       <h1 className="text-4xl font-bold text-center text-red-600 mb-8">Menus</h1>
       <Filtre Boxes={Boxes} setBoxes={setBoxes} DATAboxes={DATAboxes} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {Boxes.map((box) => (
           <div key={box.id} className="border border-gray-200 rounded-lg p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-500">
             <h2 className="text-2xl font-bold text-red-600 mb-3">{box.nom}</h2>
-            <img className="" src={box.image} alt={box.nom} />
+            <img className="w-full h-48 object-cover rounded mb-3" src={box.image} alt={box.nom} />
             <p className="text-gray-600 mb-2"><strong>Prix:</strong> {box.prix}€</p>
             <p className="text-gray-600 mb-2"><strong>Pièces:</strong> {box.pieces}</p>
             <p className="text-gray-600 mb-4"><strong>Saveurs:</strong> {box.saveurs.join(", ")}</p>
@@ -35,8 +30,14 @@ useEffect(() => {
             </ul>
             
             <div className="flex justify-center mt-4">
-              <button className="bg-red-500 text-white px-6 py-2 rounded-full hover:bg-red-600 transition">
-                voir le menus
+              <button 
+                onClick={() => {
+                  ajouterAuPanier(box);
+                  alert(`${box.nom} ajouté au panier!`);
+                }}
+                className="bg-red-500 text-white px-6 py-2 rounded-full hover:bg-red-600 transition"
+              >
+                🛒 Ajouter au panier
               </button>
             </div>
           </div>

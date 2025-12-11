@@ -1,19 +1,18 @@
-import { useState } from 'react'
 import './App.css'
 import Header from './component/Header'
 import Footer from './component/Footer'
-import Filtre from './component/Filtre'
-import { Outlet } from 'react-router-dom';
+import Panier from './component/Panier'
+import { Outlet } from 'react-router-dom'
+import { PanierProvider } from './context/PanierContext'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-     <Header />
-     <Outlet /> 
-     <Footer />
-    </>
+    <PanierProvider>
+      <Header />
+      <Panier />
+      <Outlet /> 
+      <Footer />
+    </PanierProvider>
   )
 }
 

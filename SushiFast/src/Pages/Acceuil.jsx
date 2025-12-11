@@ -1,12 +1,18 @@
-
+import { usePanier } from '../context/PanierContext';
 
 function Acceuil() {    
+  const { ajouterAuPanier } = usePanier();
 
+  // Exemples de produits pour la page d'accueil
+  const produitsExemples = [
+    { id: 'demo1', nom: 'Maki saumon', pieces: 6, prix: 8 },
+    { id: 'demo2', nom: 'Nigiri assortiment', pieces: 8, prix: 12 },
+    { id: 'demo3', nom: 'Bento Sushi', pieces: 10, prix: 14 }
+  ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-amber-50 text-gray-800">
+    <div className="min-h-screen bg-gradient-to-b from-white to-amber-50 text-gray-800 mt-20">
       
-
       <main className="max-w-5xl mx-auto px-6 py-10">
         <section id="acceuil" className="grid md:grid-cols-2 gap-8 items-center">
           <div>
@@ -79,41 +85,31 @@ function Acceuil() {
         <section id="menu" className="mt-12">
           <h3 className="text-2xl font-semibold mb-4">Nos spécialités</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <article className="bg-white rounded-lg shadow p-4">
-              <div className="h-40 bg-gray-100 rounded mb-3 flex items-center justify-center text-gray-400">
-                Image Maki
-              </div>
-              <h4 className="font-semibold">Maki saumon</h4>
-              <p className="text-sm text-gray-600">Maki frais et savoureux, servi avec sauce soja.</p>
-              <div className="mt-3 flex justify-between items-center">
-                <span className="font-bold">8€</span>
-                <button className="text-rose-600 hover:underline text-sm">Commander</button>
-              </div>
-            </article>
-
-            <article className="bg-white rounded-lg shadow p-4">
-              <div className="h-40 bg-gray-100 rounded mb-3 flex items-center justify-center text-gray-400">
-                Image Nigiri
-              </div>
-              <h4 className="font-semibold">Nigiri assortiment</h4>
-              <p className="text-sm text-gray-600">Selection de nigiris frais, parfait pour partager.</p>
-              <div className="mt-3 flex justify-between items-center">
-                <span className="font-bold">12€</span>
-                <button className="text-rose-600 hover:underline text-sm">Commander</button>
-              </div>
-            </article>
-
-            <article className="bg-white rounded-lg shadow p-4">
-              <div className="h-40 bg-gray-100 rounded mb-3 flex items-center justify-center text-gray-400">
-                Image Bento
-              </div>
-              <h4 className="font-semibold">Bento Sushi</h4>
-              <p className="text-sm text-gray-600">Repas complet avec soupe et salade.</p>
-              <div className="mt-3 flex justify-between items-center">
-                <span className="font-bold">14€</span>
-                <button className="text-rose-600 hover:underline text-sm">Commander</button>
-              </div>
-            </article>
+            {produitsExemples.map((produit, index) => (
+              <article key={index} className="bg-white rounded-lg shadow p-4">
+                <div className="h-40 bg-gray-100 rounded mb-3 flex items-center justify-center text-gray-400">
+                  Image {produit.nom}
+                </div>
+                <h4 className="font-semibold">{produit.nom}</h4>
+                <p className="text-sm text-gray-600">
+                  {index === 0 && "Maki frais et savoureux, servi avec sauce soja."}
+                  {index === 1 && "Selection de nigiris frais, parfait pour partager."}
+                  {index === 2 && "Repas complet avec soupe et salade."}
+                </p>
+                <div className="mt-3 flex justify-between items-center">
+                  <span className="font-bold">{produit.prix}€</span>
+                  <button 
+                    onClick={() => {
+                      ajouterAuPanier(produit);
+                      alert(`${produit.nom} ajouté au panier!`);
+                    }}
+                    className="text-rose-600 hover:underline text-sm font-semibold"
+                  >
+                    🛒 Ajouter
+                  </button>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
       </main>
@@ -128,4 +124,3 @@ function Acceuil() {
   );
 }
 export default Acceuil;
-    
