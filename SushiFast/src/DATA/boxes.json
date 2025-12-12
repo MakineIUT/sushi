@@ -4,7 +4,7 @@
         "nom": "Tasty Blend",
         "pieces": 12,
         "prix": 12.50,
-        "image": "tasty-blend",
+        "image": "/images/tasty-blend.jpg",
         "aliments": [
             {
                 "nom": "California Saumon Avocat",
@@ -66,7 +66,7 @@
             "cheese"
         ],
         "prix": 15.90,
-        "image": "amateur-mix"
+        "image": "/images/amateur-mix.jpg"
     },
     {
         "id": 3,
@@ -91,7 +91,7 @@
             "avocat"
         ],
         "prix": 12.50,
-        "image": "salmon-original"
+        "image": "/images/salmon-original.jpg"
     },
     {
         "id": 4,
@@ -121,7 +121,7 @@
             "avocat"
         ],
         "prix": 15.90,
-        "image": "salmon-lovers"
+        "image": "/images/salmon-lovers.jpg"
     },
     {
         "id": 5,
@@ -141,7 +141,7 @@
             "saumon"
         ],
         "prix": 15.90,
-        "image": "salmon-classic"
+        "image": "/images/salmon-classic.jpg"
     },
     {
         "id": 6,
@@ -175,7 +175,7 @@
             "avocat"
         ],
         "prix": 15.90,
-        "image": "master-mix"
+        "image": "/images/master-mix.jpg"
     },
     {
         "id": 7,
@@ -206,7 +206,7 @@
             "cheese"
         ],
         "prix": 15.90,
-        "image": "sunrise"
+        "image": "/images/sunrise.jpg"
     },
     {
         "id": 8,
@@ -241,7 +241,7 @@
             "cheese"
         ],
         "prix": 15.90,
-        "image": "sando-box-chicken-katsu"
+        "image": "/images/sando-box-chicken-katsu.jpg"
     },
     {
         "id": 9,
@@ -271,7 +271,7 @@
             "avocat"
         ],
         "prix": 15.90,
-        "image": "sando-box-salmon-aburi"
+        "image": "/images/sando-box-salmon-aburi.jpg"
     },
     {
         "id": 10,
@@ -306,7 +306,7 @@
             "cheese"
         ],
         "prix": 19.90,
-        "image": "super-salmon"
+        "image": "/images/super-salmon.jpg"
     },
     {
         "id": 11,
@@ -343,7 +343,7 @@
             "avocat"
         ],
         "prix": 19.90,
-        "image": "california-dream"
+        "image": "/images/california-dream.jpg"
     },
     {
         "id": 12,
@@ -384,7 +384,7 @@
             "seriole lalandi"
         ],
         "prix": 24.50,
-        "image": "gourmet-mix"
+        "image": "/images/gourmet-mix.jpg"
     },
     {
         "id": 13,
@@ -424,6 +424,6 @@
             "cheese"
         ],
         "prix": 24.50,
-        "image": "fresh-mix"
+        "image": "/images/fresh-mix.jpg"
     }
 ]
