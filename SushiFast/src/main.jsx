@@ -5,6 +5,7 @@ import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'; 
 import Acceuil from './Pages/Acceuil.jsx';
 import Menus from './Pages/menus.jsx';
+import View_menu from './Pages/View_menu.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
         path: '/menus',
         element: <Menus />,
       }, 
+      {
+        path: '/view_menu/:id',
+        element: <View_menu />,
+      },
     ],
   },
 ]);
