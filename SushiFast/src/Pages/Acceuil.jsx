@@ -1,4 +1,5 @@
 import { usePanier } from '../context/PanierContext';
+import { Link } from 'react-router-dom';
 
 function Acceuil() {    
   const { ajouterAuPanier } = usePanier();
@@ -11,79 +12,107 @@ function Acceuil() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-amber-50 text-gray-800 mt-20">
+    <div className="min-h-screen bg-white text-gray-800">
       
-      <main className="max-w-5xl mx-auto px-6 py-10">
-        <section id="acceuil" className="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h2 className="text-4xl font-extrabold text-rose-600 mb-4">Réservez facilement vos sushis</h2>
-            <p className="mb-6 text-gray-600">
-              SushiFast vous propose une expérience rapide et savoureuse. Réservez votre table ou commandez à emporter en quelques clics.
+      <main className="max-w-7xl mx-auto px-6 py-10">
+        
+        {/* HERO SECTION avec effet débordement */}
+        <section className="relative min-h-[500px] flex items-center mb-20 mt-20 overflow-visible">
+          {/* Texte à gauche */}
+          <div className="max-w-xl z-10">
+            <h1 className="text-5xl md:text-6xl font-extrabold text-rose-600 mb-6 leading-tight">
+              Savourez l'authenticité japonaise
+            </h1>
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              SushiFast vous propose une expérience rapide et savoureuse. 
+              Découvrez nos menus préparés avec des ingrédients frais et 
+              commandez en quelques clics pour une livraison ultra-rapide.
             </p>
-            <ul className="grid grid-cols-2 gap-2 text-sm text-gray-700">
-              <li className="flex items-center">
-                <span className="inline-block w-2 h-2 bg-rose-600 rounded-full mr-2" />
-                Produits frais
-              </li>
-              <li className="flex items-center">
-                <span className="inline-block w-2 h-2 bg-rose-600 rounded-full mr-2" />
-                Réservation rapide
-              </li>
-              <li className="flex items-center">
-                <span className="inline-block w-2 h-2 bg-rose-600 rounded-full mr-2" />
-                Click & Collect
-              </li>
-              <li className="flex items-center">
-                <span className="inline-block w-2 h-2 bg-rose-600 rounded-full mr-2" />
-                Livraison
-              </li>
-            </ul>
+            <div className="flex gap-4">
+              <button className="bg-rose-600 hover:bg-rose-700 text-white px-8 py-3 rounded font-semibold transition shadow-lg">
+                Commander maintenant
+              </button>
+              <Link to="/menus">
+                <button className="bg-white hover:bg-gray-50 text-rose-600 px-8 py-3 rounded font-semibold transition border-2 border-rose-600">
+                  Voir les menus
+                </button>
+              </Link>
+            </div>
           </div>
 
-          <aside id="reservation" className="bg-white rounded-lg shadow p-6">
-            <h3 className="text-xl font-semibold mb-4">Réserver une table</h3>
-            <form className="space-y-3">
-              <div className="grid grid-cols-2 gap-3">
-                <input
-                  name="name"
-                  required
-                  placeholder="Nom"
-                  className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-rose-200"
-                />
-                <input
-                  name="phone"
-                  type="tel"
-                  placeholder="Téléphone"
-                  className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-rose-200"
-                />
-              </div>
-
-              <div className="grid grid-cols-3 gap-3">
-                <input name="date" type="date" required className="border rounded px-3 py-2" />
-                <input name="time" type="time" required className="border rounded px-3 py-2" />
-                <select name="people" defaultValue="2" className="border rounded px-3 py-2">
-                  <option value="1">1 personne</option>
-                  <option value="2">2 personnes</option>
-                  <option value="3">3 personnes</option>
-                  <option value="4">4 personnes</option>
-                  <option value="5">5+ personnes</option>
-                </select>
-              </div>
-
-              <div className="flex justify-end">
-                <button
-                  type="submit"
-                  className="bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded shadow"
-                >
-                  Confirmer la réservation
-                </button>
-              </div>
-            </form>
-          </aside>
+          {/* Image à droite avec débordement */}
+          <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/3 pointer-events-none">
+            <img 
+              src="/images/tamas-pap-zali_zGDWo8-unsplash.png" 
+              alt="Sushi SushiFast" 
+              className="h-[500px] w-auto object-contain"
+            />
+          </div>
         </section>
 
-        <section id="menu" className="mt-12">
-          <h3 className="text-2xl font-semibold mb-4">Nos spécialités</h3>
+        {/* SECTION COMMENT ÇA MARCHE */}
+        <section className="mb-20 mt-32">
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
+            Comment ça marche ?
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Card 1 - Choisissez */}
+            <div className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition transform hover:-translate-y-2">
+              <div className="w-20 h-20 mx-auto mb-6">
+                <img 
+                  src="/images/icones/menu.png" 
+                  alt="Choisissez un menu" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                Choisissez un menu
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Parcourez notre sélection de menus variés et choisissez celui qui vous fait envie parmi nos spécialités japonaises.
+              </p>
+            </div>
+
+            {/* Card 2 - Livraison */}
+            <div className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition transform hover:-translate-y-2">
+              <div className="w-20 h-20 mx-auto mb-6">
+                <img 
+                  src="/images/icones/delivery.png" 
+                  alt="Livraison" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                Faites-vous livrer
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Validez votre commande et recevez vos sushis frais directement chez vous en moins de 30 minutes.
+              </p>
+            </div>
+
+            {/* Card 3 - Dégustez */}
+            <div className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition transform hover:-translate-y-2">
+              <div className="w-20 h-20 mx-auto mb-6">
+                <img 
+                  src="/images/icones/enjoy.png" 
+                  alt="Dégustez" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                Dégustez
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Savourez vos sushis fraîchement préparés et profitez d'une expérience culinaire authentique à la maison.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION NOS SPÉCIALITÉS */}
+        <section id="menu" className="mb-12">
+          <h3 className="text-4xl font-bold text-center text-gray-800 mb-8">Nos spécialités</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {produitsExemples.map((produit, index) => (
               <article key={index} className="bg-white rounded-lg shadow p-4">
@@ -114,6 +143,7 @@ function Acceuil() {
         </section>
       </main>
 
+      {/* FOOTER */}
       <footer className="bg-white border-t mt-12">
         <div className="max-w-5xl mx-auto px-6 py-6 text-sm text-gray-600 flex flex-col md:flex-row justify-between">
           <span>© SushiFast</span>
@@ -123,4 +153,5 @@ function Acceuil() {
     </div>
   );
 }
+
 export default Acceuil;
