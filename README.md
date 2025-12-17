@@ -3,17 +3,14 @@
 Ce document regroupe toutes les commandes pour installer, lancer et travailler sur le projet en équipe.
 
 ## 🚀 1. Installation (Pour un nouveau développeur)
-À faire une seule fois quand tu récupères le projet sur ton ordinateur :
-
 ```bash
 # 1. Clone le projet (récupère le dossier)
-# Remplace l'URL ci-dessous par celle de TON dépôt GitHub
 git clone https://github.com/MakineIUT/sushi.git
 
 # 2. Rentre dans le dossier
 cd SushiFast
 
-# 3. Installe les dépendances (CRUCIAL car node_modules n'est pas sur Git)
+# 3. Installe les dépendances 
 npm install
 
 # 4. Lancer le projet avec Vite
