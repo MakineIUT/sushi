@@ -4,7 +4,7 @@ import DATAboxes from "../DATA/boxes.json";
 import Filtre from "../component/Filtre";
 import { usePanier } from "../context/PanierContext";
 
-function Menus({ box, open }) {
+function Menus() {
 	const [Boxes, setBoxes] = useState(DATAboxes);
 	const { ajouterAuPanier } = usePanier();
 

@@ -1,9 +1,10 @@
+import React, { useState } from 'react';
 import { usePanier } from '../context/PanierContext';
 import { Link } from 'react-router-dom';
-
+import DATAboxes from "../DATA/boxes.json";
 function Acceuil() {    
   const { ajouterAuPanier } = usePanier();
-
+  const [Boxes, setBoxes] = useState(DATAboxes);
   // Exemples de produits pour la page d'accueil
   const produitsExemples = [
     { id: 'demo1', nom: 'Maki saumon', pieces: 6, prix: 8 },
@@ -113,23 +114,31 @@ function Acceuil() {
         <section id="menu" className="mb-12 max-w-7xl mx-auto">
           <h3 className="text-4xl font-bold text-center text-gray-800 mb-8">Nos spécialités</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {produitsExemples.map((produit, index) => (
+            {Boxes.slice(0,3).map((box, index) => (
               <article key={index} className="bg-white rounded-lg shadow p-4">
                 <div className="h-40 bg-gray-100 rounded mb-3 flex items-center justify-center text-gray-400">
-                  Image {produit.nom}
+                  {box.image ? (
+                    <img 
+                      src={box.image} 
+                      alt={box.nom} 
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <span>Image non disponible</span>
+                  )}
                 </div>
-                <h4 className="font-semibold">{produit.nom}</h4>
+                <h4 className="font-semibold">{box.nom}</h4>
                 <p className="text-sm text-gray-600">
                   {index === 0 && "Maki frais et savoureux, servi avec sauce soja."}
                   {index === 1 && "Selection de nigiris frais, parfait pour partager."}
                   {index === 2 && "Repas complet avec soupe et salade."}
                 </p>
                 <div className="mt-3 flex justify-between items-center">
-                  <span className="font-bold">{produit.prix}€</span>
+                  <span className="font-bold">{box.prix}€</span>
                   <button 
                     onClick={() => {
-                      ajouterAuPanier(produit);
-                      alert(`${produit.nom} ajouté au panier!`);
+                      ajouterAuPanier(box);
+                      alert(`${box.nom} ajouté au panier!`);
                     }}
                     className="text-rose-600 hover:underline text-sm font-semibold"
                   >
@@ -141,14 +150,6 @@ function Acceuil() {
           </div>
         </section>
       </main>
-
-      {/* FOOTER */}
-      <footer className="bg-white border-t mt-12">
-        <div className="max-w-5xl mx-auto px-6 py-6 text-sm text-gray-600 flex flex-col md:flex-row justify-between">
-          <span>© SushiFast</span>
-          <span className="mt-2 md:mt-0">Contact: contact@sushifast.example</span>
-        </div>
-      </footer>
     </div>
   );
 }
