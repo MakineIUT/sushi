@@ -30,7 +30,7 @@ function Acceuil() {
             </p>
             <div className="justify center">
               <Link to="/menus">
-                <button className="bg-white hover:bg-gray-50 text-rose-600 px-8 py-3 rounded font-semibold transition border-2 border-rose-600 shadow">
+                <button className="bg-white hover:bg-rose-600 hover:text-white text-rose-600 px-8 py-3 rounded font-semibold transition border-2 border-rose-600 shadow">
                   Voir les menus
                 </button>
               </Link>
