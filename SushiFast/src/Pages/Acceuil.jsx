@@ -63,7 +63,7 @@ function Acceuil() {
             <div className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition transform hover:-translate-y-2">
               <div className="w-20 h-20 mx-auto mb-6">
                 <img 
-                  src="/images/icones/menu.png" 
+                  src="/images/Icones/menu.png" 
                   alt="Choisissez un menu" 
                   className="w-full h-full object-contain"
                 />
