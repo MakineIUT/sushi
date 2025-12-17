@@ -28,10 +28,7 @@ function Acceuil() {
               Découvrez nos menus préparés avec des ingrédients frais et 
               commandez en quelques clics pour une livraison ultra-rapide.
             </p>
-            <div className="flex gap-4">
-              <button className="bg-rose-600 hover:bg-rose-700 text-white px-8 py-3 rounded font-semibold transition shadow-lg">
-                Commander maintenant
-              </button>
+            <div className="justify center">
               <Link to="/menus">
                 <button className="bg-white hover:bg-gray-50 text-rose-600 px-8 py-3 rounded font-semibold transition border-2 border-rose-600 shadow">
                   Voir les menus
