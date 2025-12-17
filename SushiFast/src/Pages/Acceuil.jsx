@@ -12,18 +12,18 @@ function Acceuil() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-gray-800">
+    <div className="min-h-screen bg-gradient-to-b from-white to-amber-50 text-gray-800">
       
-      <main className="max-w-7xl mx-auto px-6 py-10">
-        
-        {/* HERO SECTION avec effet débordement */}
-        <section className="relative min-h-[500px] flex items-center mb-20 mt-20 overflow-visible">
+      {/* HERO SECTION */}
+      <section className="min-h-[500px] flex items-center mt-20 bg-white">
+        <div className="w-full grid md:grid-cols-2 gap-8 items-center">
+          
           {/* Texte à gauche */}
-          <div className="max-w-xl z-10">
+          <div className="px-8 md:px-16">
             <h1 className="text-5xl md:text-6xl font-extrabold text-rose-600 mb-6 leading-tight">
               Savourez l'authenticité japonaise
             </h1>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
               SushiFast vous propose une expérience rapide et savoureuse. 
               Découvrez nos menus préparés avec des ingrédients frais et 
               commandez en quelques clics pour une livraison ultra-rapide.
@@ -33,25 +33,27 @@ function Acceuil() {
                 Commander maintenant
               </button>
               <Link to="/menus">
-                <button className="bg-white hover:bg-gray-50 text-rose-600 px-8 py-3 rounded font-semibold transition border-2 border-rose-600">
+                <button className="bg-white hover:bg-gray-50 text-rose-600 px-8 py-3 rounded font-semibold transition border-2 border-rose-600 shadow">
                   Voir les menus
                 </button>
               </Link>
             </div>
           </div>
 
-          {/* Image à droite avec débordement */}
-          <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/3 pointer-events-none">
+          {/* Image à droite */}
+          <div className="absolute right-0 top-20 md:top-32 w-1/2 h-[500px] pointer-events-none z-0">
             <img 
               src="/images/tamas-pap-zali_zGDWo8-unsplash.png" 
-              alt="Sushi SushiFast" 
-              className="h-[500px] w-auto object-contain"
+              alt="Sushi avec baguettes" 
+              className="w-full h-auto object-cover max-h-[500px]"
             />
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* SECTION COMMENT ÇA MARCHE */}
-        <section className="mb-20 mt-32">
+      <main className="px-6 py-10">
+        {/* SECTION COMMENT ÇA MARCHE avec icônes */}
+        <section className="mb-20 mt-20 max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
             Comment ça marche ?
           </h2>
@@ -78,7 +80,7 @@ function Acceuil() {
             <div className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition transform hover:-translate-y-2">
               <div className="w-20 h-20 mx-auto mb-6">
                 <img 
-                  src="/images/icones/delivery.png" 
+                  src="/images/Icones/shipping-and-delivery.png" 
                   alt="Livraison" 
                   className="w-full h-full object-contain"
                 />
@@ -95,7 +97,7 @@ function Acceuil() {
             <div className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition transform hover:-translate-y-2">
               <div className="w-20 h-20 mx-auto mb-6">
                 <img 
-                  src="/images/icones/enjoy.png" 
+                  src="/images/Icones/sushi.png" 
                   alt="Dégustez" 
                   className="w-full h-full object-contain"
                 />
@@ -111,7 +113,7 @@ function Acceuil() {
         </section>
 
         {/* SECTION NOS SPÉCIALITÉS */}
-        <section id="menu" className="mb-12">
+        <section id="menu" className="mb-12 max-w-7xl mx-auto">
           <h3 className="text-4xl font-bold text-center text-gray-800 mb-8">Nos spécialités</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {produitsExemples.map((produit, index) => (
