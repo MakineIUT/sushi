@@ -13,23 +13,23 @@ function Acceuil() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-amber-50 text-gray-800">
+    <div className="min-h-screen bg-white text-gray-800 p-0 m-0 w-full ">
       
       {/* HERO SECTION */}
-      <section className="min-h-[500px] flex items-center mt-20 bg-white">
-        <div className="w-full grid md:grid-cols-2 gap-8 items-center">
+      <section className="min-h-[500px] flex items-center mt-20">
+        <div className="w-full grid md:grid-cols-2 gap-8 items-center ">
           
           {/* Texte à gauche */}
           <div className="px-8 md:px-16">
-            <h1 className="text-5xl md:text-6xl font-extrabold text-rose-600 mb-6 leading-tight">
+            <h1 className="text-left text-5xl md:text-6xl font-extrabold text-rose-600 mb-6 leading-tight">
               Savourez l'authenticité japonaise
             </h1>
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+            <p className="text-left text-lg text-gray-700 mb-8 leading-relaxed">
               SushiFast vous propose une expérience rapide et savoureuse. 
               Découvrez nos menus préparés avec des ingrédients frais et 
               commandez en quelques clics pour une livraison ultra-rapide.
             </p>
-            <div className="justify center">
+            <div className="flex justify-start">
               <Link to="/menus">
                 <button className="bg-white hover:bg-rose-600 hover:text-white text-rose-600 px-8 py-3 rounded font-semibold transition border-2 border-rose-600 shadow">
                   Voir les menus
@@ -41,22 +41,23 @@ function Acceuil() {
           {/* Image à droite */}
           <div className="absolute right-0 top-20 md:top-32 w-1/2 h-[500px] pointer-events-none z-0">
             <img 
-              src="/images/tamas-pap-zali_zGDWo8-unsplash.png" 
+              src="/images/tamas-pap-zali_zGDWo8-unsplash4.png" 
               alt="Sushi avec baguettes" 
               className="w-full h-auto object-cover max-h-[500px]"
             />
           </div>
         </div>
       </section>
+      
 
-      <main className="px-6 py-10">
+      <main className="px-6 py-10 ">
         {/* SECTION COMMENT ÇA MARCHE avec icônes */}
-        <section className="mb-20 mt-20 max-w-7xl mx-auto">
+        <section className="mb-20 mt-20 max-w-7xl mx-auto  ">
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
             Comment ça marche ?
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 ">
             {/* Card 1 - Choisissez */}
             <div className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition transform hover:-translate-y-2">
               <div className="w-20 h-20 mx-auto mb-6">
@@ -111,7 +112,7 @@ function Acceuil() {
         </section>
 
         {/* SECTION NOS SPÉCIALITÉS */}
-        <section id="menu" className="mb-12 max-w-7xl mx-auto">
+        <section id="menu" className="mb-12 w-full mx-auto bg-[url('../public/images/background2.png')] bg-center bg-cover bg-no-repeat h-screen">
           <h3 className="text-4xl font-bold text-center text-gray-800 mb-8">Nos spécialités</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {Boxes.slice(0,3).map((box, index) => (
